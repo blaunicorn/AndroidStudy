@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://www.cnblogs.com/gbeniot/p/7294537.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vue.js移动端app实战2 - G-Beniot - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./vue.js移动端app实战2 - G-Beniot - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./vue.js移动端app实战2 - G-Beniot - 博客园_files/bundle-elf.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./vue.js移动端app实战2 - G-Beniot - 博客园_files/bundle-elf-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/Gbeniot/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/Gbeniot/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/Gbeniot/wlwmanifest.xml">
+<script async="" src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/analytics.js.下载"></script><script src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+<script type="text/javascript">var currentBlogApp = 'Gbeniot', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/Gbeniot/"><img id="blogLogo" src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/Gbeniot/">Galaxy' Home</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/Gbeniot/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/G-Beniot">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/Gbeniot/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/Gbeniot/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 173&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 2</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/Gbeniot/p/7294537.html">vue.js移动端app实战2</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><div id="cnblogs_post_body" class="cnblogs-markdown">
+<h3 id="貌似有部分人要求写的更详细这里多写一点vuel-cli基础的配置">貌似有部分人要求写的更详细，这里多写一点vuel-cli基础的配置</h3>
+<h3 id="什么是vue-cli">什么是vue-cli？</h3>
+<p>官方的解释是：A simple CLI for scaffolding Vue.js projects，<br>简单翻译一下，就是： 用简单的命令行来生成vue.js项目脚手架。</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-comment">&lt;!-- 全局安装vue-cli --&gt;
+
+npm install -g vue-cli</span></span></code></pre>
+<p>vue-cli预先定义了5个模板，根据你使用的打包工具的不同选择不同的模板，通常我们用的都是第一个webpack模板。每个模板都预先写好了很多依赖和基础配置，可以直接在此基础上进行开发，非常方便。</p>
+<ol>
+<li>
+<p>webpack</p>
+</li>
+<li>
+<p>webpack-simple</p>
+</li>
+<li>
+<p>browserify</p>
+</li>
+<li>
+<p>browserify-simple</p>
+</li>
+<li>
+<p>simple</p>
+</li>
+</ol>
+<p>安装vue-cli后,就可以下载我们要的模板了。</p>
+<pre><code class="hljs fortran">用法：vue init template-<span class="hljs-keyword">name project-<span class="hljs-keyword">name</span></span></code></pre>
+<p><img src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/967327-20170806125726459-1018346860.png" alt=""></p>
+<p>这时会有很多提示，询问你要安装vue2还是vue1，是否要安装mocha，eslint等东西，根据你自己的需要安装即可。安装好后，会提示你怎么开始，根据提示输入命令就可以启动了。</p>
+<p><br><br>为了适配各种屏幕，首先把淘宝的flexible引进来，在main.js里面</p>
+<pre><code class="hljs swift"><span class="hljs-keyword">import './base/js/base.js'</span></code></pre>
+<p>其次，把样式重置也引入进来, App.vue的style标签里面</p>
+<pre><code class="hljs css">@<span class="hljs-keyword">import <span class="hljs-string">'./base/css/normalize.scss';</span></span></code></pre>
+<h6 id="这里我有一个问题没有解决就是开发中我用scss来写mixin由于很多页面都会用到所以我希望在app.vue里面引入mixin.scss好让所以的vue组件都能用但实际上这样并不起作用后来又尝试写到main.js里面不过也没用目前只能是哪个组件需要用到mixin就import进来不过确实有点麻烦">这里我有一个问题没有解决，就是开发中我用scss来写mixin，由于很多页面都会用到，所以我希望在App.vue里面引入mixin.scss，好让所以的vue组件都能用，但实际上这样并不起作用；后来又尝试写到main.js里面，不过也没用。目前只能是哪个组件需要用到mixin,就import进来，不过确实有点麻烦。</h6>
+<p>接着，引入字体图标, 在App.vue的style标签里面</p>
+<pre><code class="hljs swift">@<span class="hljs-keyword">import url('<span class="hljs-comment">//at.alicdn.com/t/font_nfzwlroyg2vuz0k9.css')</span></span></code></pre>
+<h3 id="基本配置完成后接下来分析一下路由怎么写">基本配置完成后，接下来分析一下路由怎么写：</h3>
+<p>为了达到上图的效果，我们需要2个基本的组件，一个是购物车，一个是home页面。购物车比较简单，就一个页面，主要看Home页面。</p>
+<p>home组件又分成4个组件，一个是底部的导航，还有三个是上面的首页，搜索和个人中心。<br>也即是说为了达到图片上的效果，目前我们需要总共6个组件。</p>
+<p>分别是：</p>
+<pre><code class="hljs css">1. 购物车 
+2. <span class="hljs-selector-tag">home
+
+    2<span class="hljs-selector-class">.1 首页
+    2<span class="hljs-selector-class">.2 搜索
+    2<span class="hljs-selector-class">.3 个人中心
+    2<span class="hljs-selector-class">.4 底部导航</span></span></span></span></span></code></pre>
+<p>因此，新建6个.vue文件。为了尽快把路由编写出来，我喜欢随便填充一点内容（主要是为了知道在哪个页面），比如：</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div&gt;首页首页首页<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">div&gt;首页首页首页<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">div&gt;首页首页首页<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">div&gt;首页首页首页<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">div&gt;首页首页首页<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<h3 id="接着编写路由">接着编写路由：</h3>
+<p>使用路由首先要引入Vue-router并use，并将配置好路由的vue-router实例挂载到new出来的Vue实例上，不过vue-cli已将帮我们配置好了，只需要在其基础上继续开发就行了。</p>
+<p>找到编写路由的index.js文件：<br>首先引入6个组件：</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import xxx <span class="hljs-keyword">from <span class="hljs-string">'xxx/xxx'
+
+<span class="hljs-keyword">import car <span class="hljs-keyword">from <span class="hljs-string">'@/components/car'</span></span></span></span></span></span></code></pre>
+<p><a>你可能经常看到@这样的东西</a>，这其实是webpack配置的别名。打开build文件夹下面的webpack.base.conf.js。<br><img src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/967327-20170806125810397-795505890.png" alt=""></p>
+<p>你也可以自己再加别名，比如</p>
+<pre><code class="hljs bash"><span class="hljs-built_in">alias: {
+    ~<span class="hljs-string">': resolve('src/component<span class="hljs-string">')
+}</span></span></span></code></pre>
+<p>当webpack在import或者require语句中遇到~时，就会将其解析为对应的路径。使用别名可以使得路径更为清晰，也可以减少一些重复的代码。</p>
+<p>对比一下：</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import car <span class="hljs-keyword">from <span class="hljs-string">'../../component/car.vue'
+<span class="hljs-keyword">import car <span class="hljs-keyword">from <span class="hljs-string">'~/car.vue'</span></span></span></span></span></span></code></pre>
+<p>不过，使用别名的坏处就是，编辑器没法智能的提示文件所在路径了。</p>
+<p>当页面多了以后，打包后的文件会变得很大，大于1M也是很正常的。因此，首屏打开也会变慢，毕竟一下子要加载以M为单位的js文件。想要减少文件的大小，可以把Vue等公共库提取到vendor,从而利用浏览器的缓存效果。同时，也可以让路由按需加载，当需要用到的时候，才去加载对应的组件，利用webpakc的异步加载可以解决：</p>
+<pre><code class="hljs coffeescript">const Car = r =&gt; <span class="hljs-built_in">require.ensure([], <span class="hljs-function"><span class="hljs-params">() =&gt; r(<span class="hljs-built_in">require(<span class="hljs-string">'@/components/car')), <span class="hljs-string">'car')</span></span></span></span></span></span></code></pre>
+<p>也可以像下面这么写：</p>
+<pre><code class="hljs php"><span class="hljs-keyword">const Car = resolve =&gt; <span class="hljs-keyword">require([<span class="hljs-string">'@/components/car'], resolve)</span></span></span></code></pre>
+<p>Vue2.3+的版本提供了更高级的异步组件写法，想了解的可以去官网看一下，这里用的还是旧的用法。</p>
+<p><img src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/967327-20170806125833709-663437733.png" alt=""></p>
+<p>对着上面的结构图，路由的结构其实大概已经了解了</p>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs"><span class="op">{
+    <span class="dt">path<span class="op">:<span class="st"><span class="hljs-string">''<span class="op">,
+    <span class="dt">redirect<span class="op">:<span class="st"><span class="hljs-string">"/home"
+<span class="op">},  
+<span class="op">{
+    <span class="dt">path<span class="op">:<span class="st"><span class="hljs-string">'/home'<span class="op">,
+    <span class="dt">component<span class="op">:Main<span class="op">,
+    <span class="dt">children<span class="op">:[
+        <span class="op">{
+            <span class="dt">path<span class="op">:<span class="st"><span class="hljs-string">''<span class="op">,
+            <span class="dt">redirect<span class="op">:<span class="st"><span class="hljs-string">"index"
+        <span class="op">},
+        <span class="op">{
+            <span class="dt">path<span class="op">:<span class="st"><span class="hljs-string">'index'<span class="op">,
+            <span class="dt">component<span class="op">:Index
+        <span class="op">},
+        <span class="op">{
+            <span class="dt">path<span class="op">:<span class="st"><span class="hljs-string">'search'<span class="op">,
+            <span class="dt">component<span class="op">:Search
+        <span class="op">},             
+        <span class="op">{
+            <span class="dt">path<span class="op">:<span class="st"><span class="hljs-string">'vip'<span class="op">,
+            <span class="dt">component<span class="op">:Vip                
+        <span class="op">}
+    ]
+<span class="op">},
+<span class="op">{
+    <span class="dt">path<span class="op">:<span class="st"><span class="hljs-string">'/car'<span class="op">,
+    <span class="dt">component<span class="op">:Car<span class="op">,
+<span class="op">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p>这里我们用了2个重定向，当路由为空时，会重定向到<code>/home</code>，而当home为空时，又会重定向到<code>index</code>，所以你只需要在浏览器输入http://localhost:8088 ,就会自动跳转到home下的<code>首页</code></p>
+<h3 id="开始编写home组件">开始编写home组件：</h3>
+<p>可以发现home组件由上下2部分组成，底部是固定的导航，上面的部分是动态切换的页面。因此home组件的template写出来应该是这样的：</p>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs">
+
+<span class="op">&lt;template<span class="op">&gt;
+   <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="xml"><span class="hljs-tag">div<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">
+       <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="xml"><span class="hljs-tag">router<span class="op"><span class="xml"><span class="hljs-tag">-<span class="xml"><span class="hljs-tag">view<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">router-view&gt;<span class="xml">
+<span class="ss"><span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">foot-nav&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">foot<span class="op"><span class="xml"><span class="hljs-tag">-<span class="xml"><span class="hljs-tag">nav<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">
+   <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">div&gt;<span class="xml">
+<span class="ss"><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">
+
+    
+
+<span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="xml"><span class="hljs-tag">script<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">
+    <span class="im"><span class="xml"><span class="javascript"><span class="hljs-keyword">import<span class="xml"> footNav <span class="im"><span class="xml"><span class="javascript"><span class="hljs-keyword">from<span class="xml"> <span class="st"><span class="xml"><span class="javascript"><span class="hljs-string">'../components/foot-nav.vue'<span class="xml">
+    <span class="im"><span class="xml"><span class="javascript"><span class="hljs-keyword">export<span class="xml"> <span class="im"><span class="xml"><span class="javascript"><span class="hljs-keyword">default<span class="xml"> <span class="op">{<span class="xml">
+       <span class="dt">components<span class="op">:{<span class="xml">
+            footNav
+       <span class="op">}<span class="xml">
+    <span class="op">}<span class="xml">
+<span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">script&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p><code>foot</code>导航组件相对来说也比较简单，无非就是一个固定在底部的列表，每个列表都写好了对应的路由，点击每一个就会切换对应的页面。如果路由层级比较深，写起来可能会很长，如to="test1/test2/test3" ，考虑在配置路由的js中，给每个路由添加name。这样，在router-link中就只需要传递对应的name就可以了。</p>
+<div class="sourceCode">
+<pre class="sourceCode html"><code class="sourceCode html hljs xml"><span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">template&gt;
+    <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">div<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"foot-nav-containner"<span class="kw"><span class="hljs-tag">&gt;
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">ul<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"bottom-nav"<span class="kw"><span class="hljs-tag">&gt;
+            <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">router-link<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">tag=<span class="st"><span class="hljs-tag"><span class="hljs-string">"li"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:to=<span class="st"><span class="hljs-tag"><span class="hljs-string">'{name:"index"}'<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"bottom-nav__li iconfont icon-shouye bottom-nav__li--home"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">router-link&gt;
+            <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">router-link<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">tag=<span class="st"><span class="hljs-tag"><span class="hljs-string">"li"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:to=<span class="st"><span class="hljs-tag"><span class="hljs-string">'{name:"search"}'<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"bottom-nav__li iconfont icon-ss bottom-nav__li--search"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">router-link&gt;
+            <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">router-link<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">tag=<span class="st"><span class="hljs-tag"><span class="hljs-string">"li"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:to=<span class="st"><span class="hljs-tag"><span class="hljs-string">'{name:"car"}'<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"bottom-nav__li iconfont icon-shoppingcart bottom-nav__li--car"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">router-link&gt;
+            <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">router-link<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">tag=<span class="st"><span class="hljs-tag"><span class="hljs-string">"li"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:to=<span class="st"><span class="hljs-tag"><span class="hljs-string">'{name:"vip"}'<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"bottom-nav__li iconfont icon-gerenzhongxinxia bottom-nav__li--vip"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">router-link&gt;
+        <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">ul&gt;
+     <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">template&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p><code>index组件</code></p>
+<p>index组件由轮播图以及三个排行榜组成。3个排行榜除了数据和名字不同个以外，其他的都一样。所以，我们总共需要2个组件就可以。大致如下：</p>
+<div class="sourceCode">
+<pre class="sourceCode html"><code class="sourceCode html hljs xml"><span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">template&gt;
+    <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">div<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">id=<span class="st"><span class="hljs-tag"><span class="hljs-string">"container"<span class="kw"><span class="hljs-tag">&gt;      
+        <span class="er"><span class="hljs-tag">&lt;<span class="hljs-tag"><span class="hljs-name">轮播图&gt;<span class="er"><span class="hljs-tag">&lt;<span class="hljs-tag">/<span class="hljs-name">轮播图&gt;
+        <span class="er"><span class="hljs-tag">&lt;<span class="hljs-tag"><span class="hljs-name">排行榜 <span class="hljs-attr">:类型=<span class="hljs-string">1&gt;<span class="er"><span class="hljs-tag">&lt;<span class="hljs-tag">/<span class="hljs-name">排行榜&gt;
+        <span class="er"><span class="hljs-tag">&lt;<span class="hljs-tag"><span class="hljs-name">排行榜 <span class="hljs-attr">:类型=<span class="hljs-string">2&gt;<span class="er"><span class="hljs-tag">&lt;<span class="hljs-tag">/<span class="hljs-name">排行榜&gt;
+        <span class="er"><span class="hljs-tag">&lt;<span class="hljs-tag"><span class="hljs-name">排行榜 <span class="hljs-attr">:类型=<span class="hljs-string">3&gt;<span class="er"><span class="hljs-tag">&lt;<span class="hljs-tag">/<span class="hljs-name">排行榜&gt;  
+    <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">template&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<h3 id="先来看轮播图">先来看轮播图:</h3>
+<p>轮播图我们用的是vue-awesome-swiper插件，使用方式同swiper基本一致，更多信息请github搜索。</p>
+<p>在main.js中引入插件并使用：</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import VueAwesomeSwiper <span class="hljs-keyword">from <span class="hljs-string">'vue-awesome-swiper'
+
+Vue.use(VueAwesomeSwiper);</span></span></span></code></pre>
+<p>由于可能不止一个页面会用到轮播图，所以我们可以把轮播图提取出来。</p>
+<pre><code class="hljs css">新建一个<span class="hljs-selector-tag">swiper<span class="hljs-selector-class">.vue文件</span></span></code></pre>
+<div class="sourceCode">
+<pre class="sourceCode html"><code class="sourceCode html hljs xml"><span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">template&gt;
+    <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">swiper<span class="ot"><span class="hljs-tag">  <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"swiper-box"<span class="kw"><span class="hljs-tag">&gt;
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"swiper-item"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide&gt;
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"swiper-item"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide&gt;
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"swiper-item"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide&gt;
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"swiper-item"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide&gt;
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">div<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"swiper-pagination"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">slot=<span class="st"><span class="hljs-tag"><span class="hljs-string">"pagination"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+    <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">swiper&gt;
+<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">template&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs"><span class="op">&lt;script<span class="op">&gt;
+<span class="im"><span class="hljs-keyword">export <span class="im"><span class="hljs-keyword">default <span class="op">{
+    <span class="at">data()<span class="op">{
+        <span class="cf"><span class="hljs-keyword">return<span class="op">{
+             <span class="dt">swiperOption<span class="op">: <span class="op">{
+                <span class="dt">pagination<span class="op">: <span class="st"><span class="hljs-string">'.swiper-pagination'<span class="op">,
+                <span class="dt">direction<span class="op">: <span class="st"><span class="hljs-string">'horizontal'<span class="op">,          
+            <span class="op">} 
+        <span class="op">}       
+    <span class="op">},
+     
+<span class="op">};
+<span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">script&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<div class="sourceCode">
+<pre class="sourceCode css"><code class="sourceCode css hljs">&lt;<span class="hljs-selector-tag">style <span class="hljs-selector-tag">lang=<span class="st">"<span class="hljs-selector-tag">scss" <span class="hljs-selector-tag">scoped&gt;
+<span class="dv">@<span class="hljs-keyword">import <span class="st"><span class="hljs-string">'../base/css/base.scss'<span class="dv">;
+    <span class="fl">.swiper-box <span class="kw">{
+        <span class="kw"><span class="hljs-attribute">width: <span class="dt">100%<span class="kw">;
+        <span class="kw"><span class="hljs-attribute">height: <span class="dt">100%<span class="kw">;
+        <span class="kw"><span class="hljs-attribute">margin: <span class="dt">0 <span class="dt">auto<span class="kw">;
+        <span class="er">.swiper-item <span class="er">{
+            <span class="kw"><span class="hljs-attribute">height: <span class="dt">5rem<span class="kw">;
+            <span class="kw"><span class="hljs-attribute">background: <span class="dt"><span class="hljs-built_in">url() <span class="dt">no-repeat <span class="dt">center/cover<span class="kw">;
+            <span class="co"><span class="hljs-comment">/* 使用Mixin来处理2x,3x图 */
+             <span class="er">&amp;:nth-of-type(1){
+             <span class="er">@include <span class="er">dpr-img("../assets/","vue"); 
+           <span class="kw">} 
+            &amp;<span class="dv"><span class="hljs-selector-pseudo">:nth-of-type<span class="hljs-selector-pseudo">(2)<span class="kw">{
+                <span class="er">@include <span class="er">dpr-img("../assets/","swiper1");
+            <span class="kw">}
+            &amp;<span class="dv"><span class="hljs-selector-pseudo">:nth-of-type<span class="hljs-selector-pseudo">(3)<span class="kw">{
+                <span class="er">@include <span class="er">dpr-img("../assets/","swiper2");
+            <span class="kw">}
+            &amp;<span class="dv"><span class="hljs-selector-pseudo">:nth-of-type<span class="hljs-selector-pseudo">(4)<span class="kw">{
+                <span class="er">@include <span class="er">dpr-img("../assets/","swiper3");
+            <span class="kw">}  
+        }         }   
+&lt;/<span class="hljs-selector-tag">style&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p>样式方面就忽略了，要作为一个组件，上面的写法还存在问题，主要体现在：</p>
+<pre><code class="hljs haskell">问题<span class="hljs-number">1：轮播图的配置参数写在组件<span class="hljs-class"><span class="hljs-keyword">data里面。</span></span></span></code></pre>
+<p>假如有2个页面需要用到这个组件，1个组件需要自动轮播，一个组价不需要自动轮播，这样的话，你可能会考虑对某个页面做单独处理，比如做一个if判断之类的。但是，假如有很多页面需要轮播图，而且不同的地方很多，比如你想对a页面轮播图滑动到下一张后alert(1),对b页面alert(2)等等等等，那该如何做呢？总不能一个一个判断吧，所以正确的方法应该是把配置参数通过prop接受父组件传递过来的参数</p>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs"><span class="op">&lt;script<span class="op">&gt;
+<span class="im"><span class="hljs-keyword">export <span class="im"><span class="hljs-keyword">default <span class="op">{
+    <span class="at">data()<span class="op">{
+        <span class="cf"><span class="hljs-keyword">return<span class="op">{
+            
+        <span class="op">}       
+    <span class="op">},
+    <span class="dt">props<span class="op">:{
+        <span class="dt">swiperOption<span class="op">:{
+            <span class="dt">type<span class="op">:<span class="hljs-built_in">Object
+        <span class="op">}
+    <span class="op">}
+<span class="op">};
+<span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">script&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p>在父组件里面import组件并传递参数</p>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs"><span class="op">&lt;template<span class="op">&gt;
+    <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="xml"><span class="hljs-tag"><span class="hljs-name">div <span class="hljs-attr">id<span class="op"><span class="xml"><span class="hljs-tag">=<span class="st"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"container"<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">      
+        <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="xml"><span class="hljs-tag"><span class="hljs-name">swiperComponent <span class="op"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">:<span class="xml"><span class="hljs-tag"><span class="hljs-attr">swiperOption<span class="op"><span class="xml"><span class="hljs-tag">=<span class="st"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"swiperOption"<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;<span class="ss"><span class="hljs-tag">/<span class="hljs-name">swiperComponent&gt;       <span class="xml">
+<span class="ss"><span class="xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">
+<span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">template&gt;<span class="xml">
+
+<span class="ss"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script&gt;<span class="xml">
+<span class="ss"><span class="xml"><span class="javascript"><span class="hljs-keyword">import swiperComponent <span class="hljs-keyword">from <span class="hljs-string">'./swiper<span class="xml"><span class="javascript"><span class="hljs-string">.<span class="at"><span class="xml"><span class="javascript"><span class="hljs-string">vue<span class="st"><span class="xml"><span class="javascript"><span class="hljs-string">'<span class="xml">
+<span class="im"><span class="xml"><span class="javascript"><span class="hljs-keyword">export<span class="xml"> <span class="im"><span class="xml"><span class="javascript"><span class="hljs-keyword">default<span class="xml"> <span class="op">{<span class="xml">
+    <span class="at">data<span class="xml">() <span class="op">{<span class="xml">
+        <span class="cf"><span class="xml"><span class="javascript"><span class="hljs-keyword">return<span class="xml"> <span class="op">{<span class="xml">
+            <span class="dt">swiperOption<span class="op">:<span class="xml"> <span class="op">{<span class="xml">
+                <span class="dt">pagination<span class="op">:<span class="xml"> <span class="st"><span class="xml"><span class="javascript"><span class="hljs-string">'.swiper-pagination'<span class="op">,<span class="xml">
+                <span class="dt">direction<span class="op">:<span class="xml"> <span class="st"><span class="xml"><span class="javascript"><span class="hljs-string">'horizontal'<span class="op">,<span class="xml">          
+            <span class="op">},<span class="xml">                      
+        <span class="op">}<span class="xml">
+    <span class="op">},<span class="xml">
+    <span class="dt">components<span class="op">:{<span class="xml">
+        swiperComponent<span class="op">,<span class="xml">
+    <span class="op">}<span class="xml">    
+<span class="op">}<span class="xml">
+<span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">script&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p>如此一来，当哪个页面需要用到轮播图，就在哪个页面写好参数，并通过v-bind传递需要的参数。</p>
+<pre><code class="hljs">问题2：轮播图数量固定。</code></pre>
+<p>不可能每个页面都是4个轮播图，而应该某个参数（一个数组）的长度来决定。父组件在通过ajax请求后获得该数组，并通过prop传递给swiper组件。</p>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs"><span class="op">&lt;template<span class="op">&gt;
+    <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="xml"><span class="hljs-tag"><span class="hljs-name">swiper  <span class="kw"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">class<span class="op"><span class="xml"><span class="hljs-tag">=<span class="st"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"swiper-box"<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">
+        <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="xml"><span class="hljs-tag">swiper<span class="op"><span class="xml"><span class="hljs-tag">-<span class="xml"><span class="hljs-tag"><span class="hljs-name">slide <span class="kw"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">class<span class="op"><span class="xml"><span class="hljs-tag">=<span class="st"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"swiper-item"<span class="xml"><span class="hljs-tag"> <span class="hljs-attr">v<span class="op"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">-<span class="cf"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">for<span class="op"><span class="xml"><span class="hljs-tag">=<span class="st"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"(v,i) in swiperList "<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;<span class="ss"><span class="hljs-tag">/<span class="hljs-name">swiper-slide&gt;     <span class="xml">
+<span class="ss"><span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div <span class="hljs-attr">class=<span class="hljs-string">"swiper-pagination" <span class="hljs-attr">slot=<span class="hljs-string">"pagination"&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">div<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">
+    <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">swiper&gt;<span class="xml">
+<span class="ss"><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">
+
+props<span class="op">:{<span class="xml">
+     swiperList：<span class="op">{<span class="xml">
+        <span class="dt">type<span class="op">:<span class="xml">Array<span class="op">,<span class="xml">
+        <span class="dt">default<span class="op">:<span class="xml">[]
+   <span class="op">}<span class="xml">   
+<span class="op">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<pre><code class="hljs ruby">假如你是用的img标签，则 <span class="hljs-symbol">:src=<span class="hljs-string">"v.img";
+
+假如你是用background,则 <span class="hljs-symbol">:style=<span class="hljs-string">"{backgroundImage:v.img}"</span></span></span></span></code></pre>
+<p>这样，我们的swiper组件基本已经解耦了。</p>
+<h3 id="排行榜">排行榜</h3>
+<p>新建一个电影排行榜组film.vue文件<br>排行榜组件结构如下：<br>(样式基本人人会写，不再多说)</p>
+<div class="sourceCode">
+<pre class="sourceCode html"><code class="sourceCode html hljs xml"><span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">template&gt;
+     <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">div<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"film"<span class="kw"><span class="hljs-tag">&gt;
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">h3<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"film__type"<span class="kw"><span class="hljs-tag">&gt;
+            <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">span&gt;{{type}}<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">span&gt;
+            <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">router-link<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:to=<span class="st"><span class="hljs-tag"><span class="hljs-string">'{path:"/classify/"+url}'<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;<span class="hljs-name">span<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"more"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;<span class="hljs-name">em&gt;更多<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">em&gt;<span class="hljs-tag">&lt;<span class="hljs-name">em<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"iconfont icon-more"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">em&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">span&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">router-link&gt;
+                          
+        <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">h3&gt;
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">div<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"film__list"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:ref=<span class="st"><span class="hljs-tag"><span class="hljs-string">"el"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:data-request=<span class="st"><span class="hljs-tag"><span class="hljs-string">"url"<span class="kw"><span class="hljs-tag">&gt;         
+            <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">ul<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"clearfix"<span class="kw"><span class="hljs-tag">&gt;
+                <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">router-link<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">tag=<span class="st"><span class="hljs-tag"><span class="hljs-string">"li"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">v-for=<span class="st"><span class="hljs-tag"><span class="hljs-string">"(v,i) in array"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:key=<span class="st"><span class="hljs-tag"><span class="hljs-string">"v.id"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:to=<span class="st"><span class="hljs-tag"><span class="hljs-string">'{path:"/film-detail/"+v.id}'<span class="kw"><span class="hljs-tag">&gt;
+                    <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">div<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"film__list__img"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;<span class="hljs-name">img<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">v-lazy=<span class="st"><span class="hljs-tag"><span class="hljs-string">"v.images.small"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">alt=<span class="st"><span class="hljs-tag"><span class="hljs-string">""<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+                    <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">div<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"film__list__detail"<span class="kw"><span class="hljs-tag">&gt;
+                        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">h4<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"film__list__title"<span class="kw"><span class="hljs-tag">&gt;{{v.title}}<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">h4&gt;
+                        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">p<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"film__list__rank"<span class="kw"><span class="hljs-tag">&gt;评分：{{v.rating.average}}<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">p&gt;
+                        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">p<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"film__list__rank"<span class="kw"><span class="hljs-tag">&gt;
+                            <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">span<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">:class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"{rankColor:v.rating.average&gt;((i-0.5)*2)}"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"iconfont icon-rank"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">v-for=<span class="st"><span class="hljs-tag"><span class="hljs-string">"i in 5"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">span&gt;
+                        <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">p&gt;
+                    <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+                <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">router-link&gt;    
+            <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">ul&gt;
+             <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">Loading<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">v-show=<span class="st"><span class="hljs-tag"><span class="hljs-string">"!array[0]"<span class="ot"><span class="hljs-tag"> <span class="hljs-attr">class=<span class="st"><span class="hljs-tag"><span class="hljs-string">"loading-center"<span class="kw"><span class="hljs-tag">&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">Loading&gt;
+        <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+    <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">template&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p>为了获取真实的数据，我们需要：</p>
+<ul>
+<li>豆瓣的api</li>
+</ul>
+<p>很多页面都会用到豆瓣的api地址，所以可以把相同的部分提取到一个文件</p>
+<p>找一个地方，新建文件api.js</p>
+<pre><code class="hljs cpp"><span class="hljs-keyword">const api=<span class="hljs-string">"https://api.douban.com/v2/movie/";
+<span class="hljs-keyword">export <span class="hljs-keyword">default api;</span></span></span></span></code></pre>
+<ul>
+<li>发送请求</li>
+</ul>
+<p>选一个你熟悉的ajax库，这里用的是axios</p>
+<p>在main.js里面引入axions库并use：</p>
+<pre><code class="hljs perl">import axios from <span class="hljs-string">'axios'
+Vue.<span class="hljs-keyword">use(axios);
+Vue.<span class="hljs-keyword">prototype.$ajax=axios;</span></span></span></code></pre>
+<p>我们把他挂载到vue的原型上，以便可以在所有地方通过this.$ajax上使用，不过你也可以不这么做，随个人喜欢。</p>
+<ul>
+<li>解决豆瓣api跨域问题</li>
+</ul>
+<p>如果你就这样发请求到豆瓣，是获取不到数据到，会提示你跨域，这也是前后端分离项目常见的问题。解决的方法有2个</p>
+<p>1个是通过webpack的dev-server配置proxy, 不过有一个问题，就是只在开发阶段可以使用,也即是当你开发完成后，npm run build生成打包后的文件，想再去服务器看效果就不行了。</p>
+<p>2 是我现在用的，通过设置chrome来跨域，具体设置方法请参考<br><a href="http://www.cnblogs.com/laden666666/p/5544572.html">这篇文章</a>。设置完后，以后所以的项目都可以使用，无需对每个项目再单独配置proxy代理了。</p>
+<p>搞定前提条件后，接下来的无非是在create或者mounted生命周期发送一个请求，请求成功后把数据赋值给v-for绑定的data了。不过还有问题，就是滚动条的问题。假如你不做任何处理，那么当获取数据成功后，会渲染20个li（根据后台返回的长度）。很明显，ul的长度肯定超过了整个屏幕的宽度，所以X轴会一直拉长，底下会出现滚动条，你可以拖动到屏幕之外。但是，我们希望的是屏幕的宽度保持不变，列表超过屏幕时隐藏元素，由我们手动去滑动。</p>
+<p>那么ul的长度为多少了？假如你随便写一个很长的长度，那么滑动到后面就全是空白了。如果太短了，就滑动不了。因此ul长度由后台返回的数量*(li的宽带+li的padding-right，这里的加法取决于你的LI的css结构)决定。因此，获取完数据后，在nextTick时需要给UL的宽度重新赋值。为了方便获取元素的样式，可以在util.js写一个方法</p>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs"><span class="im"><span class="hljs-keyword">export <span class="im"><span class="hljs-keyword">default <span class="kw"><span class="hljs-function"><span class="hljs-keyword">function<span class="hljs-function">(<span class="hljs-params">el<span class="op">,<span class="hljs-function"><span class="hljs-params">style)<span class="op">{
+    <span class="cf"><span class="hljs-keyword">return <span class="at"><span class="hljs-built_in">parseInt(<span class="va"><span class="hljs-built_in">window.<span class="at">getComputedStyle(el<span class="op">, <span class="kw"><span class="hljs-literal">false)[style])
+<span class="op">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p>在methods里写一方法计算ul应有的宽度，el即ul元素，可以通过绑定ref来获取。</p>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs"><span class="at">freshWidth(el)<span class="op">{
+    <span class="kw"><span class="hljs-keyword">var width<span class="op">=<span class="at">getStyle(<span class="va">el.<span class="at">children[<span class="dv">0]<span class="op">,<span class="st"><span class="hljs-string">"width")<span class="op">;
+    <span class="kw"><span class="hljs-keyword">var padding<span class="op">=<span class="at">getStyle(<span class="va">el.<span class="at">children[<span class="dv">0]<span class="op">,<span class="st"><span class="hljs-string">"padding-right")<span class="op">;
+    <span class="va">el.<span class="va">style.<span class="at">width<span class="op">=<span class="va">el.<span class="va">children.<span class="at">length<span class="op">*(width<span class="op">+padding<span class="dv">+<span class="hljs-number">2)<span class="op">+<span class="st"><span class="hljs-string">"px"<span class="op">;              
+<span class="op">}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p>为了能够拖动，有2种解决方式：</p>
+<p>第一种比较简单，就是给Ul的外层div1设置固定长宽overflow:auto，当ul超出时，div就会出现滚动条，这样就以拖动了。不过会出现滚动条，很碍眼。因此，给div1外面再套一层div2，并设置div2的高度低于div1，比如最为层的div2高度80px,div1高度100px，并设置div2的overflow：hidden。如此一来，就可以隐藏滚动条，并且可以拖动了。</p>
+<p><img src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/967327-20170806125925912-707492363.png" alt=""></p>
+<p>第二种是使用better-scroll库, 使用better-scroll需要2层的结构</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div <span class="hljs-attr">id=<span class="hljs-string">"containner"&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul <span class="hljs-attr">id=<span class="hljs-string">"scroller"&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">ul&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
+container层为初始化的元素，需要设置overflow:hidden;初始化后，第一个子元素ul就可滚动了。
+
+引入better-scroll
+
+1.在mounted生命周期阶段new BScroll({})并传参数初始化；
+2.发送请求获取数据，
+<span class="hljs-comment">&lt;!-- 初始化的元素以及请求的参数我们也都通过prop接受父组件传递过来 --&gt;
+3.将后台数据赋值给array数组
+4.调用nextTick方法并在回调函数中重新计算ul的长度后，refresh scroller</span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs"><span class="op">&lt;!-- 父组件 <span class="op">--&gt;
+ <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="xml"><span class="hljs-tag"><span class="hljs-name">filmComponent 
+    <span class="op"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">:<span class="xml"><span class="hljs-tag"><span class="hljs-attr">el<span class="op"><span class="xml"><span class="hljs-tag">=<span class="st"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"filmType.topFilmData.scroller"<span class="xml"><span class="hljs-tag"> 
+    <span class="op"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">:<span class="xml"><span class="hljs-tag"><span class="hljs-attr">url<span class="op"><span class="xml"><span class="hljs-tag">=<span class="st"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"filmType.topFilmData.url"<span class="xml"><span class="hljs-tag"> 
+    <span class="op"><span class="xml"><span class="hljs-tag"><span class="hljs-attr">:<span class="xml"><span class="hljs-tag"><span class="hljs-attr">type<span class="op"><span class="xml"><span class="hljs-tag">=<span class="st"><span class="xml"><span class="hljs-tag"><span class="hljs-string">"filmType.topFilmData.type"<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">         
+<span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">filmComponent&gt;<span class="xml">
+<span class="ss"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script&gt;<span class="xml">
+<span class="ss"><span class="hljs-keyword">export <span class="hljs-keyword">default {<span class="xml">
+<span class="ss">    data<span class="sc">()<span class="ss"> {<span class="xml">
+<span class="ss">        <span class="hljs-keyword">return {           <span class="xml">
+<span class="ss">            filmType:{<span class="xml">
+<span class="ss">                topFilmData:{<span class="xml">
+<span class="ss">                    scroller:<span class="hljs-string">"scroll-top250",<span class="xml">
+<span class="ss">                    url:<span class="hljs-string">"top250",<span class="xml">
+<span class="ss"><span class="xml"><span class="javascript">                    type:<span class="hljs-string">"top250"<span class="xml">
+<span class="ss">                }                <span class="xml">
+<span class="ss">            }<span class="xml">
+<span class="ss">            <span class="xml">
+<span class="ss">        }<span class="xml">
+<span class="ss">    },<span class="xml">
+<span class="ss">    components:{<span class="xml">
+<span class="ss">        filmComponent<span class="xml">
+<span class="ss">    } <span class="xml">
+<span class="ss">  }<span class="xml">
+<span class="ss"><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script<span class="op"><span class="xml"><span class="hljs-tag">&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<div class="sourceCode">
+<pre class="sourceCode javascript"><code class="sourceCode javascript hljs"><span class="op">&lt;!-- 子组件 <span class="op">--&gt;
+   <span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="xml"><span class="hljs-tag">script<span class="op"><span class="xml"><span class="hljs-tag">&gt;<span class="xml">
+<span class="im">import<span class="xml"> BScroll <span class="im">from<span class="xml"> <span class="st">'better-scroll'<span class="xml">
+<span class="im">import<span class="xml"> getStyle <span class="im">from<span class="xml"> <span class="st">'../base/js/util.js'<span class="xml">
+<span class="im">import<span class="xml"> Loading <span class="im">from<span class="xml"> <span class="st">'./loading.vue'<span class="xml">
+<span class="im">import<span class="xml"> api <span class="im">from<span class="xml"> <span class="st">"../base/js/api.js"<span class="xml">
+<span class="im">export<span class="xml"> <span class="im">default<span class="xml"> <span class="op">{<span class="xml">
+    <span class="at">data<span class="xml"> () <span class="op">{<span class="xml">
+        <span class="cf">return<span class="xml"> <span class="op">{<span class="xml">
+            <span class="dt">scroller<span class="op">:<span class="kw">null<span class="op"><span class="xml"><span class="xml">,<span class="hljs-comment">&lt;!--<span class="xml"><span class="xml"><span class="hljs-comment"> 存放scroll元素 <span class="op"><span class="xml"><span class="xml"><span class="hljs-comment">--&gt;<span class="xml">
+            <span class="dt">array<span class="op">:<span class="xml">[]，<span class="op"><span class="xml"><span class="xml"><span class="hljs-comment">&lt;!--<span class="xml"><span class="xml"><span class="hljs-comment"> 存放后台返回的数组 <span class="op"><span class="xml"><span class="xml"><span class="hljs-comment">--&gt;<span class="xml">
+        <span class="op">};<span class="xml">
+    <span class="op">},<span class="xml">
+    <span class="dt">components<span class="op">:{<span class="xml">
+        Loading
+    <span class="op">},<span class="xml">
+    <span class="dt">props<span class="op">:<span class="xml">[<span class="st">"el"<span class="op">,<span class="st">"url"<span class="op">,<span class="st">"type"<span class="xml">]<span class="op">,<span class="xml">
+    <span class="at">mounted<span class="xml">()<span class="op">{<span class="xml">
+        <span class="kw">const<span class="xml"> el <span class="op">=<span class="xml"> <span class="kw">this<span class="xml">.<span class="at">$refs<span class="xml">[<span class="kw">this<span class="xml">.<span class="at">el<span class="xml">]<span class="op">;<span class="xml">
+        <span class="kw">this<span class="xml">.<span class="at">scroller<span class="op">=<span class="kw">this<span class="xml">.<span class="at">initScroll<span class="xml">(el)<span class="op">;<span class="xml">
+        <span class="kw">const<span class="xml"> <span class="op">{<span class="xml">request<span class="op">}=<span class="va">el<span class="xml">.<span class="at">dataset<span class="op">;<span class="xml">
+
+        <span class="kw">this<span class="xml">.<span class="va">$ajax<span class="xml">.<span class="at">get<span class="xml">(<span class="vs">`<span class="sc">${<span class="xml">api<span class="sc">}${<span class="xml">request<span class="sc">}<span class="vs">?start=<span class="sc">${<span class="va">Math<span class="xml">.<span class="at">floor<span class="xml">(<span class="va">Math<span class="xml">.<span class="at">random<span class="xml">()<span class="op">*<span class="dv">10<span class="xml">)<span class="sc">}<span class="vs">`<span class="xml">)
+            .<span class="at">then<span class="xml">((res)<span class="op">=&gt;{<span class="xml">
+                <span class="kw">this<span class="xml">.<span class="at">array<span class="op">=<span class="va">res<span class="xml">.<span class="va">data<span class="xml">.<span class="at">subjects<span class="op">;<span class="xml">
+                <span class="kw">this<span class="xml">.<span class="at">$nextTick<span class="xml">(()<span class="op">=&gt;{<span class="xml">
+                     <span class="kw">this<span class="xml">.<span class="at">freshWidth<span class="xml">(<span class="va">el<span class="xml">.<span class="at">children<span class="xml">[<span class="dv">0<span class="xml">])<span class="op">;<span class="xml"> 
+                     <span class="kw">this<span class="xml">.<span class="va">scroller<span class="xml">.<span class="at">refresh<span class="xml">()<span class="op">;<span class="xml">                   
+                <span class="op">}<span class="xml">)             
+            <span class="op">}<span class="xml">) 
+    
+    <span class="op">},<span class="xml">
+    <span class="dt">methods<span class="op">:{<span class="xml">
+        <span class="at">initScroll<span class="xml">(el)<span class="op">{<span class="xml">
+            <span class="cf">return<span class="xml"> <span class="kw">new<span class="xml"> <span class="at">BScroll<span class="xml">(el<span class="op">,{<span class="xml">
+                <span class="dt">click<span class="op">:<span class="kw">true<span class="op">,<span class="xml">
+                <span class="dt">probeType<span class="op">:<span class="dv">3<span class="op">,<span class="xml">
+                <span class="dt">scrollX<span class="op">:<span class="kw">true<span class="op">,<span class="xml">
+                <span class="dt">scrollY<span class="op">:<span class="kw">false<span class="xml">
+            <span class="op">}<span class="xml">)
+        <span class="op">},<span class="xml">
+        <span class="at">freshWidth<span class="xml">(el)<span class="op">{<span class="xml">
+            <span class="kw">var<span class="xml"> width<span class="op">=<span class="at">getStyle<span class="xml">(<span class="va">el<span class="xml">.<span class="at">children<span class="xml">[<span class="dv">0<span class="xml">]<span class="op">,<span class="st">"width"<span class="xml">)<span class="op">;<span class="xml">
+            <span class="kw">var<span class="xml"> padding<span class="op">=<span class="at">getStyle<span class="xml">(<span class="va">el<span class="xml">.<span class="at">children<span class="xml">[<span class="dv">0<span class="xml">]<span class="op">,<span class="st">"padding-right"<span class="xml">)<span class="op">;<span class="xml">
+            <span class="va">el<span class="xml">.<span class="va">style<span class="xml">.<span class="at">width<span class="op">=<span class="va">el<span class="xml">.<span class="va">children<span class="xml">.<span class="at">length<span class="op">*<span class="xml">(width<span class="op">+<span class="xml">padding<span class="dv">+2<span class="xml">)<span class="op">+<span class="st">"px"<span class="op">;<span class="xml">              
+        <span class="op">},<span class="xml">
+    <span class="op">}<span class="xml">
+<span class="op">};<span class="xml">
+<span class="op"><span class="xml"><span class="hljs-tag">&lt;<span class="ss"><span class="xml"><span class="hljs-tag">/<span class="hljs-name">script&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p>我们总共有3个排行榜，那么只需要在父组件再写2个标签并在data中写好参数，传给子组件就可以了</p>
+<div class="sourceCode">
+<pre class="sourceCode html"><code class="sourceCode html hljs xml"><span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">filmComponent<span class="hljs-tag"> 
+<span class="ot"><span class="hljs-tag">    <span class="hljs-attr">:el=<span class="st"><span class="hljs-tag"><span class="hljs-string">"filmType.topFilmData.scroller"<span class="hljs-tag"> 
+<span class="ot"><span class="hljs-tag">    <span class="hljs-attr">:url=<span class="st"><span class="hljs-tag"><span class="hljs-string">"filmType.topFilmData.url"<span class="hljs-tag"> 
+<span class="ot"><span class="hljs-tag">    <span class="hljs-attr">:type=<span class="st"><span class="hljs-tag"><span class="hljs-string">"filmType.topFilmData.type"<span class="kw"><span class="hljs-tag">&gt;         
+<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">filmComponent&gt;
+
+<span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">filmComponent<span class="hljs-tag"> 
+<span class="ot"><span class="hljs-tag">    <span class="hljs-attr">:el=<span class="st"><span class="hljs-tag"><span class="hljs-string">"filmType.topFilmData.scroller"<span class="hljs-tag"> 
+<span class="ot"><span class="hljs-tag">    <span class="hljs-attr">:url=<span class="st"><span class="hljs-tag"><span class="hljs-string">"filmType.topFilmData.url"<span class="hljs-tag"> 
+<span class="ot"><span class="hljs-tag">    <span class="hljs-attr">:type=<span class="st"><span class="hljs-tag"><span class="hljs-string">"filmType.topFilmData.type"<span class="kw"><span class="hljs-tag">&gt;         
+<span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">filmComponent&gt;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<p>这样基本就就完成了，再稍微优化下，我们有3个榜单，假设每个榜单都加载20个数据，那么获取完数据后就会有3*20总共有60张图片的请求。常用的优化方式就是等图片进入可视区之后再去加载图片，在之前给一张loading或者其他图片作为站位。</p>
+<p>使用<code>vue-lazyload</code>来达到这个效果，相关配置参数请自行github搜索vue-lazyload</p>
+<p>在main.js里面</p>
+<pre><code class="hljs django"><span class="xml">import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload, {
+   preLoad: 1.3,
+   loading: require('@/assets/head.jpg'),<span class="hljs-comment">&lt;!-- 站位图 --&gt;
+  attempt: 1
+})</span></span></code></pre>
+<p>使用的方法非常简单:</p>
+<p>原本我们是这么写的</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div&gt;<span class="hljs-tag">&lt;<span class="hljs-name">img <span class="hljs-attr">:src=<span class="hljs-string">"v.images.small" <span class="hljs-attr">alt=<span class="hljs-string">""&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;</span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<p>改成下面这样就行了</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img <span class="hljs-attr">v-lazy=<span class="hljs-string">"v.images.small" <span class="hljs-attr">alt=<span class="hljs-string">""&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;</span></span></span></span></span></span></span></span></span></code></pre>
+<p>写到这里，基本配置以及首页就差不多完成了，相关代码已长传到<a href="https://github.com/linrunzheng/vueApp">&nbsp;https://github.com/linrunzheng/vueApp</a></p>
+<p>以上皆为本人学习过程中的一点回顾，如有错误还望指出。</p>
+<p>&nbsp;</p>
+</div>
+<div class="clear">&nbsp;</div>
+<div id="blog_post_info_block">&nbsp;</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(7294537,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;54ca337d-2f61-e111-aa3f-842b2b196315&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/Gbeniot/" target="_blank"><img src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/20140530104004.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/Gbeniot/">G-Beniot</a><br>
+            <a href="http://home.cnblogs.com/u/Gbeniot/followees">关注 - 9</a><br>
+            <a href="http://home.cnblogs.com/u/Gbeniot/followers">粉丝 - 2</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;54ca337d-2f61-e111-aa3f-842b2b196315&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(7294537,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(7294537,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/Gbeniot/p/7285034.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/Gbeniot/p/7285034.html" title="发布于2017-08-04 14:43">如何开发原生的 JavaScript 插件(知识点+写法)</a><br><a href="http://www.cnblogs.com/Gbeniot/p/7294546.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/Gbeniot/p/7294546.html" title="发布于2017-08-06 13:35">vue.js移动端app实战1</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2017-08-06 13:32</span> <a href="http://www.cnblogs.com/Gbeniot/">G-Beniot</a> 阅读(<span id="post_view_count">275</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=7294537" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/gbeniot/p/7294537.html#" onclick="AddToWz(7294537);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=182260,cb_entryId=7294537,cb_blogApp=currentBlogApp,cb_blogUserGuid='54ca337d-2f61-e111-aa3f-842b2b196315',cb_entryCreatedDate='2017/8/6 13:32:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/gbeniot/p/7294537.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/gbeniot/p/7294537.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型工控、组态\仿真、建模CAD源码2018！</a><br><a href="https://cloud.tencent.com/solution/la?fromSource=gwzcw.766790.766790.766790" target="_blank">【推荐】微信小程序一站式部署 多场景模板定制</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="http://www.gcpowertools.com.cn/products/spreadjs/?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=SpreadJS2&amp;utm_campaign=community" target="_blank"><img width="300" height="250" src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/24442-20171206093644566-325426505.png" alt="SpreadJS2_1206"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/589217/" target="_blank">艾诚专访傅盛：3年斩获6亿全球用户，他为何还要卖孩子？</a><br> ·  <a href="https://news.cnblogs.com/n/589222/" target="_blank">开发者亲身经历告诉你在育碧开发独立游戏是怎样</a><br> ·  <a href="https://news.cnblogs.com/n/589311/" target="_blank">Oracle在云市场虚张声势，掩饰其在数据库的绝望</a><br> ·  <a href="https://news.cnblogs.com/n/589310/" target="_blank">关于2017手机行业 这十个数据或许让你大跌眼镜</a><br> ·  <a href="https://news.cnblogs.com/n/589309/" target="_blank">马斯克：接下来的工程开发重点将是“超大火箭”</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="http://click.aliyun.com/m/34770/" target="_blank"><img width="468" height="60" src="./vue.js移动端app实战2 - G-Beniot - 博客园_files/24442-20171208101900738-116140477.jpg" alt="阿里云C2-1208"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/586236/" target="_blank">领域驱动设计在互联网业务开发中的实践</a><br> ·  <a href="http://kb.cnblogs.com/page/585502/" target="_blank">步入云计算</a><br> ·  <a href="http://kb.cnblogs.com/page/531409/" target="_blank">以操作系统的角度述说线程与进程</a><br> ·  <a href="http://kb.cnblogs.com/page/141729/" target="_blank">软件测试转型之路</a><br> ·  <a href="http://kb.cnblogs.com/page/177402/" target="_blank">门内门外看招聘</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/Gbeniot/">G-Beniot</a><br>园龄：<a href="https://home.cnblogs.com/u/Gbeniot/" title="入园时间：2012-02-27">5年11个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/Gbeniot/followers/">2</a><br>关注：<a href="https://home.cnblogs.com/u/Gbeniot/followees/">9</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;54ca337d-2f61-e111-aa3f-842b2b196315&#39;)">+加关注</a></div><script>getFollowStatus('54ca337d-2f61-e111-aa3f-842b2b196315')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/01/01&#39;);return false;">&lt;</a></td><td align="center">2018年2月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/03/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td class="CalWeekendDay" align="center">3</td></tr><tr><td class="CalWeekendDay" align="center">4</td><td align="center">5</td><td align="center">6</td><td class="CalTodayDay" align="center">7</td><td align="center">8</td><td align="center">9</td><td class="CalWeekendDay" align="center">10</td></tr><tr><td class="CalWeekendDay" align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td class="CalWeekendDay" align="center">17</td></tr><tr><td class="CalWeekendDay" align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td class="CalWeekendDay" align="center">24</td></tr><tr><td class="CalWeekendDay" align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td></tr><tr><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/Gbeniot/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/Gbeniot/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/Gbeniot/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/Gbeniot/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/Gbeniot/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/Gbeniot/tag/MySQL/">MySQL</a>(6)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/json/">json</a>(4)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/Html5/">Html5</a>(3)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/sql/">sql</a>(3)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/liunx/">liunx</a>(2)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/php/">php</a>(2)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/%E4%BC%AA%E9%9D%99%E6%80%81/">伪静态</a>(2)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0/">页面刷新</a>(1)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/%E5%BC%82%E6%AD%A5/">异步</a>(1)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>(1)</li><li><a href="http://www.cnblogs.com/Gbeniot/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/Gbeniot/archive/2018/01.html">2018年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/Gbeniot/archive/2017/12.html">2017年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/Gbeniot/archive/2017/10.html">2017年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/Gbeniot/archive/2017/09.html">2017年9月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/Gbeniot/archive/2017/08.html">2017年8月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/Gbeniot/archive/2017/07.html">2017年7月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/Gbeniot/archive/2016/10.html">2016年10月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/Gbeniot/archive/2016/08.html">2016年8月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/Gbeniot/archive/2016/06.html">2016年6月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/Gbeniot/archive/2016/05.html">2016年5月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/Gbeniot/archive/2016/04.html">2016年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/Gbeniot/archive/2016/03.html">2016年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/Gbeniot/archive/2016/02.html">2016年2月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/Gbeniot/archive/2016/01.html">2016年1月 (21)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/Gbeniot/archive/2015/12.html">2015年12月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/Gbeniot/archive/2015/11.html">2015年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/Gbeniot/archive/2015/10.html">2015年10月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_17" href="http://www.cnblogs.com/Gbeniot/archive/2015/08.html">2015年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_18" href="http://www.cnblogs.com/Gbeniot/archive/2015/07.html">2015年7月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_19" href="http://www.cnblogs.com/Gbeniot/archive/2015/05.html">2015年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_20" href="http://www.cnblogs.com/Gbeniot/archive/2015/02.html">2015年2月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_21" href="http://www.cnblogs.com/Gbeniot/archive/2015/01.html">2015年1月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_22" href="http://www.cnblogs.com/Gbeniot/archive/2014/12.html">2014年12月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_23" href="http://www.cnblogs.com/Gbeniot/archive/2014/11.html">2014年11月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_24" href="http://www.cnblogs.com/Gbeniot/archive/2014/10.html">2014年10月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_25" href="http://www.cnblogs.com/Gbeniot/archive/2014/09.html">2014年9月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_26" href="http://www.cnblogs.com/Gbeniot/archive/2014/08.html">2014年8月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_27" href="http://www.cnblogs.com/Gbeniot/archive/2014/07.html">2014年7月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_28" href="http://www.cnblogs.com/Gbeniot/archive/2014/06.html">2014年6月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_29" href="http://www.cnblogs.com/Gbeniot/archive/2014/05.html">2014年5月 (15)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_imagecategory" class="catListImageCategory sidebar-block">
+<h3 class="catListTitle">相册</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/Gbeniot/gallery/583923.html" rel="nofollow">编程之余 养下眼(2)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/Gbeniot/p/5156633.html#3455662">1. Re:管理员 修改MySQL 5.7.9 新版本的root密码方法以及一些新变化整理</a></li>
+        <li class="recent_comment_body">你好，我使用了mysql5.7.12版本，redhat linux版本，修改密码总是不成功。执行：update mysql.user set authentication_string=passwor......</li>
+        <li class="recent_comment_author">--追着太阳晒</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/Gbeniot/p/3761149.html#2955482">2. Re:php win主机下实现ISAPI_Rewrite伪静态</a></li>
+        <li class="recent_comment_body">很少讓php跑在windows上</li>
+        <li class="recent_comment_author">--討論PHP的QQ群223494678</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/Gbeniot/p/5421371.html">1. CentOS安装crontab及使用方法(7719)</a></li><li><a href="http://www.cnblogs.com/Gbeniot/p/5567187.html">2. 教你如何搭建自己的Shadowsocks服务器。(6871)</a></li><li><a href="http://www.cnblogs.com/Gbeniot/p/5156633.html">3. 管理员 修改MySQL 5.7.9 新版本的root密码方法以及一些新变化整理(5138)</a></li><li><a href="http://www.cnblogs.com/Gbeniot/p/5465025.html">4. centos 7 mysql 离线安装教程(3056)</a></li><li><a href="http://www.cnblogs.com/Gbeniot/p/3760070.html">5. Mac开发利器之程序员编辑器MacVim学习总结(1628)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/Gbeniot/p/3761149.html">1. php win主机下实现ISAPI_Rewrite伪静态(1)</a></li><li><a href="http://www.cnblogs.com/Gbeniot/p/5156633.html">2. 管理员 修改MySQL 5.7.9 新版本的root密码方法以及一些新变化整理(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/Gbeniot/p/3760556.html">1. Linux 文件及文件夹权限(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 G-Beniot
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>
