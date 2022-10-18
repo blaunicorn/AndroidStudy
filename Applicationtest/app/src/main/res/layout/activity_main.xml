@@ -50,16 +50,19 @@
     <TextView
         android:id="@+id/tv_json"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
+        android:layout_height="0dp"
+        android:layout_marginBottom="270dp"
+        android:background="@color/design_dark_default_color_on_background"
+        android:scrollbars="vertical"
         android:text="@string/tv_json"
-        android:textColor="#ff0000"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_code"
         app:layout_constraintVertical_bias="0.185" />
 
     <Button
@@ -70,7 +73,7 @@
         android:text="@string/button_01"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv"
         app:layout_constraintVertical_bias="0.504" />
@@ -82,42 +85,68 @@
         android:layout_marginBottom="100dp"
         android:text="@string/button_02"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintEnd_toStartOf="@+id/button_04"
+        app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toEndOf="@+id/button_01"
         app:layout_constraintTop_toBottomOf="@+id/tv"
         app:layout_constraintVertical_bias="0.504" />
+
+    <Button
+        android:id="@+id/button_04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="获取文本数据"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toEndOf="@+id/button_01"
+        app:layout_constraintTop_toBottomOf="@+id/tv"
+        app:layout_constraintVertical_bias="0.504" />
+
     <Button
         android:id="@+id/button_03"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="100dp"
-        android:text="悬浮按钮"
         android:onClick="startFloatingButtonService"
+        android:text="悬浮按钮"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
-        app:layout_constraintTop_toBottomOf="@+id/button_02"
-        app:layout_constraintVertical_bias="0.504" />
+        app:layout_constraintTop_toBottomOf="@+id/button_04"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tv_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="38dp"
         android:background="#00ffff"
         android:text="视图宽度采用wrap_content定义"
         android:textColor="#000000"
         android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_json"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:background="#00ffff"-->
-<!--        android:text="视图宽度采用match_parent定义,距离顶部30dp"-->
-<!--        android:textColor="#000000"-->
-<!--        android:textSize="17sp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        tools:ignore="MissingConstraints" />-->
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteY="731dp" />
+
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:background="#00ffff"-->
+    <!--        android:text="视图宽度采用match_parent定义,距离顶部30dp"-->
+    <!--        android:textColor="#000000"-->
+    <!--        android:textSize="17sp"-->
+    <!--        android:layout_marginTop="30dp"-->
+    <!--        tools:ignore="MissingConstraints" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

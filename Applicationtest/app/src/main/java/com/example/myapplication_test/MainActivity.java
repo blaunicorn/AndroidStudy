@@ -1,10 +1,17 @@
 package com.example.myapplication_test;
 
+import static com.example.myapplication_test.R.raw.test;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.ScrollingMovementMethod;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +23,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication_test.utils.HttpServer;
 import com.example.myapplication_test.utils.Utils;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
 //         子线程获取网络数据
         Button button_02 = findViewById(R.id.button_02);
         TextView tv_json = findViewById(R.id.tv_json);
+        //可滑动
+        tv_json.setMovementMethod(ScrollingMovementMethod.getInstance());
         button_02.setOnClickListener(view -> {
             Thread thread=new Thread(new Runnable() {
                 String html = null;
@@ -61,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         html = HttpServer.getHtml("http://www.weather.com.cn/data/cityinfo/101190408.html");
+                        html = HttpServer.getHtml("https://movement.gzstv.com/news/detail/142186/");
                         Log.i("jsonData",html);
 
                     } catch (Exception e) {
@@ -78,7 +98,22 @@ public class MainActivity extends AppCompatActivity {
         ViewGroup.LayoutParams params = tv_code.getLayoutParams();
         params.width = Utils.dip2px(this,400);
         tv_code.setLayoutParams(params);
+
+        Button button_04 = findViewById(R.id.button_04);
+        button_04.setOnClickListener(getTxtFn);
+
     }
+
+    private View.OnClickListener getTxtFn = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            InputStream inputStream = getResources().openRawResource(test);
+            String str = getString(inputStream);
+            str = String.valueOf(regexString(str));
+            TextView tv_json = findViewById(R.id.tv_json);
+            tv_json.setText(str);
+        }
+    };
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -105,6 +140,64 @@ public class MainActivity extends AppCompatActivity {
             startService(new Intent(MainActivity.this, FloatingButtonService.class));
         }
     }
-}
+
+
+    // 读取txt文件
+    public static String getString(InputStream inputStream) {
+        InputStreamReader inputStreamReader = null;
+        try {
+            inputStreamReader = new InputStreamReader(inputStream, "utf-8");
+        } catch (UnsupportedEncodingException e1) {
+            e1.printStackTrace();
+        }
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        StringBuffer sb = new StringBuffer("");
+        String line;
+        long currLines = 0;
+        try {
+            while ((line = reader.readLine()) != null) {
+                currLines++;
+                sb.append(line);
+                sb.append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return sb.toString();
+    }
+
+    //正则匹配文本
+    @SuppressLint("ResourceAsColor")
+    public static List<String> regexString(String text) {
+        // 匹配字符串中@***
+//        String REGEX = "(0-9){1,2}[.]";
+        String test = "党的十九大的主题是";
+        // 包含回车等任意字符串
+        String REGEX = "[0-9]{1,2}\\.(.*[\\s\\S]{0,2}.*.*[\\s\\S]{0,2}.*)";
+//        text = "1.什么；\n2.什么242342";
+        Pattern pattern = Pattern.compile(REGEX);
+        Matcher matcher = pattern.matcher(text);
+        // 若要改变颜色，则需用到SpannableString
+        SpannableString sp = new SpannableString(text);
+        String group = null;
+        List<String> datelist = new ArrayList<String>();
+//        System.out.println(text);
+        while (matcher.find()) {
+
+            group = matcher.group(1);
+            sp.setSpan(new ForegroundColorSpan(R.color.purple_700), matcher.start(), matcher.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            int result = group.indexOf(test);
+            System.out.println("测试" + group);
+            if (result!=-1) {
+                System.out.println("字符串str中包含子串“ab”"+group);
+                datelist.add(group);
+            }
+
+        }
+
+        return  datelist;
+
+    };
+};
 
 
