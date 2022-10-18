@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TableLayoutDemoActivity">
+
+    <!--    第一列默认，第二列收缩，第三列拉伸，第四列默认-->
+    <TableLayout
+        android:id="@+id/table1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:showDividers="beginning"
+        android:shrinkColumns="1"
+        android:stretchColumns="2"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="表格视图内，但不是行列"
+            android:textSize="20sp"></Button>
+
+        <TableRow>
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="默认尺寸"
+                android:textSize="15sp"></Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="收缩的尺寸"
+                android:textSize="15sp"></Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="扩展的尺寸"
+                android:textSize="15sp"></Button>
+
+        </TableRow>
+    </TableLayout>
+<!--    也可以隐藏某一列,用 app:layout_constraintTop_toBottomOf="@+id/table1"控制第二个表格在下方-->
+    <TableLayout
+        android:id="@+id/table2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/table1"
+        android:collapseColumns="0"
+        android:stretchColumns="2"
+        tools:ignore="MissingConstraints">
+        <Button
+            android:layout_width="match_parent"
+            android:text="第二个表格" />
+        <TableRow>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="被隐藏的单元格" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="默认大小的单元格" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="拉伸的单元格" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

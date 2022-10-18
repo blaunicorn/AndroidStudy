@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReleativeLayoutActivity">
+<!--    如果不设定下级视图的参照物，那么下级视图默认显示在内部的左上角-->
+    <!--layout_toLeftOf 当前视图在指定视图的左边-->
+    <!--layout_toRightOf 当前视图在指定视图的右边-->
+    <!--layout_above 当前视图在指定视图的上方-->
+    <!--layout_below 当前视图在指定视图的下方-->
+    <!--layout_alignLeft 当前视图在指定视图的左侧对齐-->
+    <!--layout_alignRight 当前视图在指定视图的右侧对齐-->
+    <!--layout_alignTop 当前视图在指定视图的顶部对齐-->
+    <!--layout_alignBottom 当前视图在指定视图的底部对齐-->
+    <!--layout_centerInParent 当前视图在上级视图的中间-->
+    <!--layout_centerHorizontal 当前视图在上级视图的水平方向居中-->
+    <!--layout_centerVertical 当前视图在上级视图的垂直方向居中-->
+    <!--layout_alignParentLeft 当前视图与上级视图的左侧对齐-->
+    <!--layout_alignParentRight 当前视图与上级视图的右侧对齐-->
+    <!--layout_alignParentTop 当前视图与上级视图的顶侧对齐-->
+    <!--layout_alignParentBottom 当前视图与上级视图的底侧对齐-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="01默认在左上角"
+        android:textSize="20sp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/centerInParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#ffffff"
+        android:text="02在水平垂直的正中间"
+        android:textSize="20sp"></TextView>
+
+    <TextView
+        android:id="@+id/centerHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff"
+        android:text="03在水平正中间,用marginTop下移了25sp"
+        android:layout_marginTop="25sp"
+        android:textSize="20sp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/centerInParent"
+        android:background="#ffffff"
+        android:text="04在垂直的正中间,用below移动到指定视图的下面"
+        android:textSize="20sp"></TextView>
+    <TextView
+        android:id="@+id/alignParentLeft"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/centerHorizontal"
+        android:background="#ffffff"
+        android:text="05在上级的左边对齐，用below移动到指定视图的下面"
+        android:textSize="20sp"></TextView>
+    <TextView
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/alignParentLeft"
+        android:background="#ffffff"
+        android:text="06在上级的右边对齐，用below移动到指定视图的下面"
+        android:textSize="20sp"></TextView>
+
+    <TextView
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alignParentLeft"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="519dp"
+        android:background="#ffffff"
+        android:text="07在上级的底部对齐，用below移动到指定视图的下面"
+        android:textSize="20sp"></TextView>
+
+    <TextView
+        android:layout_width="275dp"
+        android:layout_height="57dp"
+        android:layout_above="@+id/centerInParent"
+        android:layout_alignRight="@+id/centerInParent"
+        android:layout_marginRight="-84dp"
+        android:layout_marginBottom="4dp"
+        android:background="#ffffff"
+        android:text="08在水平垂直居中之上，右侧"
+        android:textSize="20sp"></TextView>
+</RelativeLayout>

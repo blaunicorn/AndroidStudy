@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntentReceiveMainActivity">
+    <TextView
+        android:id="@+id/tv_receive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="接受到的信息，显示在这里"
+        android:layout_marginBottom="20dp"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <Button
+        android:id="@+id/btn_from_receive_to_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="返回上一个页面的数据"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_receive"
+        tools:ignore="MissingConstraints"></Button>
+
+    <TextView
+        android:id="@+id/tv_receive_to_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回的数据000"
+        app:layout_constraintTop_toBottomOf="@+id/btn_from_receive_to_send"
+        tools:ignore="MissingConstraints"></TextView>
+</androidx.constraintlayout.widget.ConstraintLayout>

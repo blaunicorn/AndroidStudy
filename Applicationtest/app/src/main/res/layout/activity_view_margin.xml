@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--最外层的背景设置为蓝色-->
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00AAFF"
+    tools:context=".ViewMarginActivity">
+<!--线性布局内部可以采用 orientation进行排列horizontal水平（默认）  vertical垂直-->
+<!--    android:layout_weight="1"，该属性不在节点设置，而是在线性布局的直接下级视图设置，
+   表示各自拥有多大的比例的宽高， 0时表示占满整个比例。-->
+    <!--    中间层的布局背景为黄色-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#FFFF99"
+        android:layout_margin="10dp"
+        android:padding="50dp"
+        >
+        <!--        最内层的视图背景为红色-->
+        <View
+            android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FF0000"
+            android:padding="10dp"
+
+            ></View>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal"
+        android:background="#ffff99"
+        >
+<!--        第一个子布局为背景为红色，layout_gravity 和layout_weight 权重设置左下对齐-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:background="#ff0000"
+            android:layout_margin="2dp"
+            android:padding="10dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            tools:ignore="Suspicious0dp">
+<!--            内容视图背景为青色，在父容器中设置gravity靠下-->
+            <View  android:layout_width="100dp" android:layout_height="100dp"  android:background="#00ffff"></View>
+        </LinearLayout>
+<!--        第二个子布局为绿色，右上对齐 layout_gravity 和layout_weight 权重-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:background="#00ff00"
+            android:layout_margin="2dp"
+            android:padding="10dp"
+            android:layout_gravity="top"
+            android:gravity="right|bottom"
+            tools:ignore="Suspicious0dp">
+            <!--            内容视图背景为青色,在父容器中设置gravity靠右靠下-->
+            <View
+                android:layout_width="100dp"
+                android:layout_height="108dp"
+
+                android:background="#00ffff"></View>
+        </LinearLayout>
+    </LinearLayout>
+<!--    横排样式-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="横排第一个"
+            android:textSize="17sp"
+            android:textColor="#000000"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="横排第二个"
+            android:layout_marginLeft="10sp"
+            android:textSize="17sp"
+            android:textColor="#000000"></TextView>
+    </LinearLayout>
+    <!--    竖排样式-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 竖排第一个"
+            android:textSize="17sp"
+            android:textColor="#000000"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="竖排第二个"
+            android:layout_marginLeft="10sp"
+            android:textSize="17sp"
+            android:textColor="#000000"></TextView>
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

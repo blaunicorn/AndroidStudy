@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GridLayoutDemoActivity">
+    <!--    网格布局支持多行多列的表格排列-->
+    <!--    网格布局默认从左往右、从上到下排列，并用到了两个属性-->
+    <!--    columnCount 指定网格的列数，即每行能放几个-->
+    <!--    rowCount 指定网格的行数-->
+    <GridLayout
+        android:id="@+id/jisuanqi"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_margin="5dp"
+
+        android:columnCount="4"
+        android:rowCount="5"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/one"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/two"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/three"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/devide"
+            android:layout_gravity="fill_horizontal"
+            android:text="/" />
+
+        <Button
+            android:id="@+id/four"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/five"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/six"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/multiply"
+            android:layout_gravity="fill_horizontal"
+            android:text="×" />
+
+        <Button
+            android:id="@+id/seven"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/eight"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/nine"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/minus"
+            android:layout_gravity="fill_horizontal"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/zero"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/point"
+            android:text="." />
+
+        <Button
+            android:id="@+id/plus"
+            android:layout_rowSpan="2"
+            android:layout_gravity="fill_horizontal|fill_vertical"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/equal"
+            android:layout_columnSpan="3"
+            android:layout_gravity="fill"
+            android:text="=" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="12dp"
+        android:columnCount="2"
+        android:rowCount="3"
+        app:layout_constraintTop_toBottomOf="@+id/jisuanqi"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_columnSpan="2"
+            android:background="@color/design_default_color_primary"
+            android:text="网格示例"
+            android:textAlignment="center"
+            android:textColor="#ff0000"
+            android:textSize="26sp"></TextView>
+
+        <TextView
+
+            android:layout_columnWeight="1"
+            android:background="#ffcccc"
+            android:text="浅红色"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"></TextView>
+
+        <TextView
+            android:layout_columnWeight="1"
+            android:background="#ffeeee"
+            android:text="浅色"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_height="50dp"
+            android:layout_columnWeight="1"
+            android:background="#00ff00"
+            android:gravity="center"
+            android:text="绿色"
+            android:textColor="#000000"
+            android:textSize="16sp"></TextView>
+
+        <TextView
+            android:layout_height="50dp"
+            android:layout_columnWeight="1"
+            android:background="#660066"
+            android:gravity="center"
+            android:text="紫色"
+
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
