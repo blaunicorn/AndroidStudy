@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -44,10 +45,10 @@ public class FloatingButtonService extends Service {
         layoutParams.format = PixelFormat.RGBA_8888;
         layoutParams.gravity = Gravity.LEFT | Gravity.TOP;
         layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
-        layoutParams.width = 500;
-        layoutParams.height = 100;
-        layoutParams.x = 300;
-        layoutParams.y = 300;
+        layoutParams.width = 600;
+        layoutParams.height = 600;
+        layoutParams.x = 100;
+        layoutParams.y = 100;
     }
 
     @Nullable
@@ -89,6 +90,9 @@ public class FloatingButtonService extends Service {
                 floatingView = null;
                 isStarted = false;
             });
+            WebView webView =  floatingView.findViewById(R.id.webView);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.loadUrl("https://www.tisuba.com");
         }
     }
 

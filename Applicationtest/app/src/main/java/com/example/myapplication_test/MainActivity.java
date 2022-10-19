@@ -3,6 +3,9 @@ package com.example.myapplication_test;
 import static com.example.myapplication_test.R.raw.test;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -102,6 +105,9 @@ public class MainActivity extends AppCompatActivity {
         Button button_04 = findViewById(R.id.button_04);
         button_04.setOnClickListener(getTxtFn);
 
+        // 启动复制
+        copyClipboard();
+
     }
 
     private View.OnClickListener getTxtFn = new View.OnClickListener() {
@@ -171,9 +177,9 @@ public class MainActivity extends AppCompatActivity {
     public static List<String> regexString(String text) {
         // 匹配字符串中@***
 //        String REGEX = "(0-9){1,2}[.]";
-        String test = "党的十九大的主题是";
+        String test = "党的十九大";
         // 包含回车等任意字符串
-        String REGEX = "[0-9]{1,2}\\.(.*[\\s\\S]{0,2}.*.*[\\s\\S]{0,2}.*)";
+        String REGEX = "([0-9]{1,2}\\.)(.*[\\s\\S]{0,2}.*.*[\\s\\S]{0,2}.*)";
 //        text = "1.什么；\n2.什么242342";
         Pattern pattern = Pattern.compile(REGEX);
         Matcher matcher = pattern.matcher(text);
@@ -184,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println(text);
         while (matcher.find()) {
 
-            group = matcher.group(1);
+            group = matcher.group(1) + matcher.group(2);
             sp.setSpan(new ForegroundColorSpan(R.color.purple_700), matcher.start(), matcher.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             int result = group.indexOf(test);
             System.out.println("测试" + group);
@@ -198,6 +204,37 @@ public class MainActivity extends AppCompatActivity {
         return  datelist;
 
     };
+
+    public void copyClipboard() {
+        //获取剪贴板管理器：
+        ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+// 创建普通字符型ClipData
+        ClipData mClipData = ClipData.newPlainText("Label", "这里是要复制的文字");
+// 将ClipData内容放到系统剪贴板里。
+        cm.setPrimaryClip(mClipData);
+    }
+
+
+
+
+    //    粘贴（获取剪贴板内容）
+    //获取系统剪贴板服务
+    public String past() {
+        ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        if (null != clipboardManager) {
+            // 获取剪贴板的剪贴数据集
+            ClipData clipData = clipboardManager.getPrimaryClip();
+            if (null != clipData && clipData.getItemCount() > 0) {
+                // 从数据集中获取（粘贴）第一条文本数据
+                ClipData.Item item = clipData.getItemAt(0);
+                if (null != item) {
+                    String content = item.getText().toString();
+                    return content;
+                }
+            }
+        }
+        return "";
+    }
 };
 
 

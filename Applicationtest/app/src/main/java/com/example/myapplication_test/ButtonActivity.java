@@ -86,16 +86,7 @@ public class ButtonActivity extends AppCompatActivity {
         }
 
 
-    // 方式二、在xml中设置 android:onClick="doClick"
-    public void doClick(View view) {
-//        view类型转换成button类型，并获取文本
-        String desc = String.format("%s 点击了按钮：%s", Utils.getNowTime(),((Button)view).getText());
-        tv_result.setText(desc);
-//        从剪贴板获取数据
-        ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-        tv_result.setText(past());
-        Toast.makeText(ButtonActivity.this, "Clicked点击了", Toast.LENGTH_SHORT).show();
-    }
+
 
 //    粘贴（获取剪贴板内容）
     //获取系统剪贴板服务
@@ -116,7 +107,18 @@ public class ButtonActivity extends AppCompatActivity {
         return "";
     }
 
+    // 方式二、在xml中设置 android:onClick="doClick"
+    public void doClick(View view) {
+//        view类型转换成button类型，并获取文本
+        String desc = String.format("%s 点击了按钮：%s", Utils.getNowTime(),((Button)view).getText());
+        tv_result.setText(desc);
+//        从剪贴板获取数据
+        ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        tv_result.setText(past());
+        Toast.makeText(ButtonActivity.this, "Clicked点击了", Toast.LENGTH_SHORT).show();
+    }
 
+     // 方式三 定义类
 //    class MyOnClickListener implements View.OnClickListener {
 //        @Override
 //        public void onClick(View v) {
