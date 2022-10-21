@@ -34,6 +34,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+            <meta-data android:name="weather" android:value="`阴天"></meta-data>
         </activity>
         <activity
             android:name=".Toggle02Activity"

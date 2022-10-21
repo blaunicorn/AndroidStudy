@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
 //         子线程获取网络数据
         Button button_02 = findViewById(R.id.button_02);
         TextView tv_json = findViewById(R.id.tv_json);
-        //可滑动
-        tv_json.setMovementMethod(ScrollingMovementMethod.getInstance());
+//        //可滑动，会与xml的设置想冲突
+//        tv_json.setMovementMethod(ScrollingMovementMethod.getInstance());
         button_02.setOnClickListener(view -> {
             Thread thread=new Thread(new Runnable() {
                 String html = null;
@@ -105,12 +105,33 @@ public class MainActivity extends AppCompatActivity {
         Button button_04 = findViewById(R.id.button_04);
         button_04.setOnClickListener(getTxtFn);
 
+
+
+        Button button_05 = findViewById(R.id.button_05);
+        button_05.setOnClickListener(pastFn);
+
         // 启动复制
         copyClipboard();
 
+        // 正则获取文本
+        Button button_06 = findViewById(R.id.button_06);
+        button_06.setOnClickListener(getRegexTxtFn);
+
     }
 
+    // 获取文本
     private View.OnClickListener getTxtFn = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            InputStream inputStream = getResources().openRawResource(test);
+            String str = getString(inputStream);
+             TextView tv_json = findViewById(R.id.tv_json);
+            tv_json.setText(str);
+        }
+    };
+
+    // 获取正则文本
+    private View.OnClickListener getRegexTxtFn = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             InputStream inputStream = getResources().openRawResource(test);
@@ -121,6 +142,16 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    // 查看剪贴板数据
+    private View.OnClickListener pastFn = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            TextView tv_code = findViewById(R.id.tv_code);
+//        从剪贴板获取数据
+            ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+            tv_code.setText(past());
+        }
+    };
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

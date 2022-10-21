@@ -39,12 +39,23 @@
         app:layout_constraintTop_toTopOf="@+id/btn_send"
         tools:ignore="MissingConstraints"></Button>
 
+    <Button
+        android:id="@+id/btn_send_by_fn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="通过函数传递参数"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_send"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send"
+        tools:ignore="MissingConstraints"></Button>
+
     <TextView
         android:id="@+id/tv_receive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="接收的返回数据"
-        app:layout_constraintTop_toBottomOf="@+id/btn_send"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send_by_fn"
         tools:ignore="MissingConstraints"></TextView>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -52,5 +63,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="利用资源文件配置数据："
+        app:layout_constraintTop_toBottomOf="@+id/tv_receive"
+        tools:ignore="MissingConstraints"></TextView>
+
+<!--    利用资源文件配置字符串-->
+    <TextView
+        android:id="@+id/tv_weahter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_weather"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

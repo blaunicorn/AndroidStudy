@@ -8,62 +8,51 @@
 
     <TextView
         android:id="@+id/tv"
-        android:layout_width="wrap_content"
+        android:textIsSelectable="true"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        android:gravity="center"
+
+        app:layout_constraintTop_toBottomOf="@+id/tv_json"
+
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:text="xml设置文件颜色!"
         android:textColor="#ff0000"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintStart_toEndOf="@+id/tv3"
+        app:layout_constraintTop_toBottomOf="@+id/tv" />
 
     <TextView
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:background="@color/design_default_color_primary"
         android:text="背景设置为绿色!"
         android:textColor="#ff0000"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintTop_toBottomOf="@+id/tv" />
 
     <TextView
         android:id="@+id/tv_json"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="270dp"
+        android:layout_height="450dp"
+        android:layout_margin="10dp"
         android:background="@color/design_dark_default_color_on_background"
         android:scrollbars="vertical"
         android:text="@string/tv_json"
         android:textColor="#000000"
         android:textIsSelectable="true"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_code"
-        app:layout_constraintVertical_bias="0.185" />
+
+        app:layout_constraintTop_toBottomOf="@+id/tv_code" />
 
     <Button
         android:id="@+id/button_01"
@@ -91,6 +80,20 @@
         app:layout_constraintTop_toBottomOf="@+id/tv"
         app:layout_constraintVertical_bias="0.504" />
 
+
+
+    <Button
+        android:id="@+id/button_03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="100dp"
+        android:onClick="startFloatingButtonService"
+        android:text="悬浮按钮"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_04"
+        app:layout_constraintVertical_bias="0.0" />
     <Button
         android:id="@+id/button_04"
         android:layout_width="wrap_content"
@@ -105,18 +108,22 @@
         app:layout_constraintVertical_bias="0.504" />
 
     <Button
-        android:id="@+id/button_03"
+        android:id="@+id/button_05"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="100dp"
-        android:onClick="startFloatingButtonService"
-        android:text="悬浮按钮"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_04"
-        app:layout_constraintVertical_bias="1.0" />
+        android:text="查看剪贴板"
+        app:layout_constraintTop_toBottomOf="@+id/button_01"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="正则匹配"
+        app:layout_constraintStart_toEndOf="@+id/button_05"
+        app:layout_constraintTop_toBottomOf="@+id/button_01"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv_code"
@@ -125,7 +132,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="38dp"
         android:background="#00ffff"
-        android:text="视图宽度采用wrap_content定义"
+        android:text="剪贴板"
         android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_json"
@@ -133,12 +140,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        tools:layout_editor_absoluteY="731dp" />
 
     <!--    <TextView-->
     <!--        android:layout_width="match_parent"-->
