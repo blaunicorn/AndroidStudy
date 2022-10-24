@@ -1,0 +1,2 @@
+public class REPLACE_IT_WITH_FULL_QUALIFIED_CLASS {
+}

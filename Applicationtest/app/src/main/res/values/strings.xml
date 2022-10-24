@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">My Application-test</string>
     <string name="hello_world">Hello World!！</string>
+    <string name="long_shortcut">long test</string>
+    <string name="short_shortcut">test</string>
     <string name="second">这个是第二个页面</string>
     <string name="tv_weather">天气</string>
     <string name="button_two">转跳到第二个页面</string>

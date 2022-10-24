@@ -1,8 +1,9 @@
 package com.example.myapplication_test;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -102,14 +103,26 @@ public class IntentSendActivity extends AppCompatActivity {
 
         // 通过 资源配置文件 读取字符串
         TextView tv_weather = findViewById(R.id.tv_weahter);
-       String value =  getString(R.string.tv_weather);
-       tv_weather.setText(value);
+        String value = getString(R.string.tv_weather);
+        tv_weather.setText(value);
 
-       // 利用 元文件 读取、传递配置信息
+        // 利用 元文件 读取、传递配置信息
         //  例如利用 第三方的sdk：高德地图、微信登录、友盟等等
 //        分三步：1.调用getPackageManager方法获取当前应用的包管理器
 //               2.调用包管理器的getActivityInfo方法获得当前活动页的信息对象
 //              3.活动信息对象的metaData是Bundle包裹类型，调用包裹对象的getString获得指定名称的参数值
+        TextView tv_meta =  findViewById(R.id.tv_meta);
+        // 从上下文获取包管理器
+        PackageManager packageManager = getPackageManager();
+        try {
+          ActivityInfo info =  packageManager.getActivityInfo(getComponentName(),PackageManager.GET_META_DATA);
+            // 获取活动页面附件的元数据
+            Bundle bundle = info.metaData;
+           String weather =  bundle.getString("weather");
+            tv_meta.setText(tv_meta.getText()+":" + weather);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
 }
