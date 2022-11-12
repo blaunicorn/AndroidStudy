@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".SqliteDatabaseActivity">
+
+    <Button
+        android:id="@+id/btn_database_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="创建数据库"
+        app:layout_constraintEnd_toStartOf="@+id/btn_database_delete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp"></Button>
+
+    <Button
+        android:id="@+id/btn_database_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除数据库"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_database_create"
+        tools:ignore="MissingConstraints"></Button>
+
+    <TextView
+        android:id="@+id/tv_database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="数据库创建"
+        app:layout_constraintTop_toBottomOf="@+id/btn_database_create"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

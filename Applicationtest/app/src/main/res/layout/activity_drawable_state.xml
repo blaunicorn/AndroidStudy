@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:importantForAutofill="auto"
+    tools:context=".DrawableStateActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <DatePicker
+
+            android:id="@+id/datePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"></DatePicker>
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间选择确定"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/datePicker"></Button>
+ <Button
+            android:id="@+id/btn_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="弹出选择框——时间选择"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_ok"></Button>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择的时间为："
+            app:layout_constraintTop_toBottomOf="@+id/btn_date">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_date2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="onDateChange监听选择时间为："
+            app:layout_constraintTop_toBottomOf="@+id/tv_date"></TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="普通按钮"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_one"
+        tools:ignore="MissingConstraints"></Button>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_nine_selector"
+        android:text="定制按钮"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:ignore="MissingConstraints"></Button>
+
+    <CheckBox
+        android:id="@+id/checkBox_system"
+        android:layout_width="267dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="72dp"
+        android:padding="5dp"
+        android:text="系统默认"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/checkbox_custom"
+        android:layout_width="267dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="72dp"
+        android:button="@drawable/check_selector"
+        android:checked="true"
+        android:padding="5dp"
+        android:text="自定义"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_system"></CheckBox>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_two"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_custom"
+
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:padding="5dp"
+            android:text="Switch开关"
+            app:layout_constraintHorizontal_weight="0.8"
+            app:layout_constraintRight_toLeftOf="@+id/switch_status"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"></TextView>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_status"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:textOff="关闭灯"
+            android:textOn="打开灯"
+            android:thumb="@drawable/ic_baseline_arrow_back_ios_new_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintLeft_toRightOf="@+id/textView2"
+            app:layout_constraintRight_toRightOf="parent"
+
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            app:layout_constraintTop_toBottomOf="@+id/switch_status"></TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="仿ios的Switch"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_two"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <CheckBox
+        android:id="@+id/ck_status"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/switch_selector"
+        android:button="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="MissingConstraints"></CheckBox>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/ck_status"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="多选择框："></TextView>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请选择您的性别"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"></TextView>
+
+        <RadioGroup
+            android:id="@+id/rg_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+            <RadioButton
+                android:id="@+id/rb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="man"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/rb_women"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="women"></RadioButton>
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="用户登录信息"></TextView>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入用户名"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"></EditText>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@+id/editText"></EditText>
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:hint="隐藏边框"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/editText2"></EditText>
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext_selector"
+            android:hint="自定义边框"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@+id/editText3"></EditText>
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext_selector"
+            android:hint="请输入11位手机号码"
+            android:inputType="number"
+            android:maxLength="11"
+            app:layout_constraintTop_toBottomOf="@+id/editText4"></EditText>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="弹出提醒对话框"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText5"></Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
