@@ -16,3 +16,5 @@ rootProject.name = "My Application-test"
 include ':app'
 include ':app:chapter06'
 include ':chapter06'
+include ':chapter07-server'
+include ':chapter07-client'

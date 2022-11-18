@@ -2,17 +2,26 @@ package com.example.chapter06.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class Utils {
@@ -83,5 +92,78 @@ public class Utils {
         }
         return stringBuilder.toString();
     }
+
+    // 把图片数据保存到指定路径
+    public static void saveImage(String path, Bitmap bitmap)  {
+        FileOutputStream  fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream(path);
+            // 把位图数据压缩到文件输出流中
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (fileOutputStream!=null) {
+                try {
+                    fileOutputStream.close();
+                }catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    // 获取文件夹目录下所有文件的名字
+    public static List<String> getFileName(String path) {
+        List<String> s= null;
+        File file = new File(path);
+        File[] files = file.listFiles();
+        if (files == null) {
+            Log.i("wcy","空目录");
+        } else {
+            s=new ArrayList<>();
+            for (int i=0;i< files.length;i++) {
+
+                s.add(files[i].getName());
+            }
+
+        }
+        return s;
+    }
+
+//    判断文件后缀是否是图片
+    public static boolean checkIsImageFile(String fileName) {
+        boolean isImageFile = false;
+        // 获取扩展名
+        String fileEnd = fileName.substring(fileName.lastIndexOf(".")+1,fileName.length()).toLowerCase();
+//         List[] images = new String[]{"jpg","png","gif","jpeg","bmp"};
+//        if (images.contains(fileEnd)  ) {
+//
+//        }
+        return  isImageFile;
+    }
+
+    // 从指定文件路径中读取位图数据
+    public static Bitmap openImage(String path) {
+        Bitmap bitmap = null;
+        FileInputStream fileInputStream = null;
+        try {
+            fileInputStream = new FileInputStream(path);
+            bitmap =  BitmapFactory.decodeStream(fileInputStream);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            if (fileInputStream !=null) {
+                try {
+                     fileInputStream.close();
+            } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return bitmap;
+    }
+
 
 }
