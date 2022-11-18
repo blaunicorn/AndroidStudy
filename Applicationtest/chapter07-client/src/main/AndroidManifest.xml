@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
+<!--出于安全考虑，Android11以后要求应用事先说明需要访问的其他软件包 或者声明访问的provider queries-->
+    <queries>
+<!--        <package android:name="com.example.chapter07_serve"></package>-->
+        <provider android:authorities="com.example.chapter07_serve..provider.UserInfoProvider"></provider>
+    </queries>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -8,6 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationtest">
+        <activity
+            android:name=".ContentWriteActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
