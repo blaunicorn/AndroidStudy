@@ -3,8 +3,10 @@ package com.example.chapter07_client;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -83,6 +85,18 @@ public class ContentWriteActivity extends AppCompatActivity {
                }
                 break;
             case R.id.btn_delete:
+                //  方式一 可以直接把参数放在Uri上，删除单行
+                Uri uri = ContentUris.withAppendedId(UserInfoContent.CONTENT_URI,2);
+                int count = getContentResolver().delete(uri, null, null);
+
+
+                //  方式二直接用参数，可删除单行
+//                int count = getContentResolver().delete(UserInfoContent.CONTENT_URI, "name=?", new String[]{"杰克"});
+
+
+                if (count>0) {
+                    Utils.show(this,"删除成功");
+                }
                 break;
         }
     }

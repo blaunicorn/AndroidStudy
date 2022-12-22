@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
+
+import androidx.core.content.FileProvider;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -164,5 +167,25 @@ public class Utils {
         return bitmap;
     }
 
+
+    // 检测文件是否存在，以及文件路径是否合法
+    public  static  boolean checkFileUri(Context ctx,String path) {
+        File file = new File(path);
+        if (!file.exists() || file.isFile() || file.length()<=0) {
+            return  false;
+        }
+        try {
+            if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.N) {
+//                转换路径为uri, 检测路径是否支持FileProvider访问方式，如果没有异常，说明文件路径正常
+                FileProvider.getUriForFile(ctx,".",file);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+
+        return  true;
+    }
 
 }

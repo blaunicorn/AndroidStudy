@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">chapter07-client</string>
+    <string name="path">Download</string>
 </resources>
