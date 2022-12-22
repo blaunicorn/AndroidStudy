@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    descendantFocusability可以阻止下级控件获得焦点，避免阻塞列表视图的点击事件，也可在视图中设置-->
+<!--    android:descendantFocusability="blocksDescendants"-->
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:scaleType="fitCenter"
+        tools:ignore="MissingConstraints"
+        tools:src="@drawable/c_02"></ImageView>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:gravity="start|center"
+        android:text="地区地区地区"
+        android:textColor="#ff0000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_operate"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon"
+        tools:ignore="MissingConstraints"
+        tools:text="地区地区"></TextView>
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:gravity="start|center"
+        android:text="详情介绍"
+        android:textColor="#ff0000"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        app:layout_constraintEnd_toStartOf="@+id/btn_operate"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon"
+        tools:ignore="MissingConstraints"
+        tools:text="详情介绍"></TextView>
+    <Button
+        android:id="@+id/btn_operate"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:text="操作按钮"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>

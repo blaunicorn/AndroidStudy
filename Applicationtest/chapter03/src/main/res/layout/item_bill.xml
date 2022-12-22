@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<TextView
+    android:id="@+id/tv_date"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:text="2022-12-12"
+    android:gravity="center|left"
+    app:layout_constraintWidth_percent="0.3"
+    tools:ignore="MissingConstraints"></TextView>
+    <TextView
+    android:id="@+id/tv_remark"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:text="买洗衣机"
+    android:gravity="center"
+        app:layout_constraintLeft_toRightOf="@+id/tv_date"
+    app:layout_constraintWidth_percent="0.5"
+    tools:ignore="MissingConstraints"></TextView>
+    <TextView
+    android:id="@+id/tv_amount"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:text="200元"
+    android:gravity="center|right"
+    app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintLeft_toRightOf="@+id/tv_remark"
+    tools:ignore="MissingConstraints"></TextView>
+</androidx.constraintlayout.widget.ConstraintLayout>

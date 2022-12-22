@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SpinnerIconActivity">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简单的图像文字适配器"
+        android:layout_marginTop="20dp"
+
+        android:textSize="17sp"
+        tools:ignore="MissingConstraints" />
+    <Spinner
+        android:id="@+id/sp_icon_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:text="测试数据"
+        tools:ignore="MissingConstraints"></Spinner>
+</androidx.constraintlayout.widget.ConstraintLayout>
